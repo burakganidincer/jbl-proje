@@ -1,0 +1,98 @@
+.home {
+    &__container {
+        display: flex;
+        padding: 7rem 1rem;
+        row-gap: 40px;
+        position: relative;
+    }
+
+    &__content {
+        position: relative;
+        display: grid;
+        justify-self: center;
+    }
+
+    &__img {
+        width: 220px;
+    }
+
+    &__title {
+        display: flex;
+        column-gap: 7px;
+        font-size: var(--biggest-font-size);
+        color: var(--first-color);
+        position: absolute;
+        top: -32px;
+        justify-self: center;
+
+        span:nth-child(2) {
+            z-index: -1;
+        }
+    }
+
+    &__tooltip {
+        position: absolute;
+        top: -8px;
+        right: 24px;
+
+        &-img {
+            width: 60px;
+        }
+
+        &-text {
+            position: absolute;
+            background: var(--gradient-color);
+            color: var(--white-color);
+            font-weight: var(--font-medium);
+            border-radius: 64px;
+            padding: 6px 12px;
+            font-size: var(--small-font-size);
+            transform: translate(60px, -40px); //Absolute dediğimiz için ilk verdiğim kısım y, ikinci kısım x ekseninde hareket ettir.
+            white-space: nowrap; //alt alta gelmesini engellemek için
+        }
+    }
+    &__social{
+        display: grid;
+        justify-content: center;
+        row-gap: 96px;
+        position: absolute;
+        top: 140px; //yukarıdan 140px uzaklaşsın
+        left: -24px;
+        &-text{
+            position: relative;
+            rotate: 90deg; //yazıyı 90 derece döndürdük
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+            &::after{ //follow us ın yanına çizgi eklemek için kullandık
+                content: "";
+                width: 48px;
+                height: 1px;
+                background-color: var(--text-color);
+                position: absolute;
+                top: 0px;
+                bottom: 0;
+                right: -64px;
+                margin: auto;
+                
+            }
+
+        }
+        &-links{
+            display: grid; // altalta aldık (zaten altaltalardı.)
+            row-gap: 12px;//aralarını açtık
+            margin-left: 22px; //soldan dış boşluk verdik çizginin altına gelebilmesi için            
+        }
+        &-link{
+            color: var(--text-color);
+            font-size: 20px;
+            transition: color 0.4s;
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+        
+    }
+    &__button{
+       justify-self: center; 
+    }
+}
